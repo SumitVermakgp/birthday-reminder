@@ -9,6 +9,11 @@ git clone https://github.com/SumitVermakgp/birthday-reminder.git
 cd birthday-reminder
 ```
 
+## Set up
+### Start Server
+```shell script
+npm run start
+```
 ## Endpoints
 ### Health Check
 
