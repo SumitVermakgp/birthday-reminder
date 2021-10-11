@@ -14,6 +14,9 @@ var options = {
   migrations: {
       tableName: 'knex_migrations'
     },
+  seeds: {
+    directory: './seeds'
+  }
 };
 
 var environment = process.env.NODE_ENV || 'development';

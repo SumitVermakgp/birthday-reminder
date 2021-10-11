@@ -11,7 +11,7 @@
     "makeMigrations": "knex migrate:make --knexfile knex.js  create_users_table",
     "migrate": "knex migrate:latest --knexfile knex.js ",
     "seeder": "knex seed:make 01_users",
-    "seed": "knex seed:run"
+    "seed": "knex seed:run --knexfile knex.js"
   },
   "repository": {
     "type": "git",
