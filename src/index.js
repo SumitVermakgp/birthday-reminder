@@ -87,6 +87,12 @@ app.delete("/api/v1/birthday/:id", async (req, res) => {
 });
 
 
+// health check
+app.get("/api/v1/health", (_, res) => {
+    res.status(200).send('OK');
+})
+
+
 app.listen(9999, () => {
     console.log(`Yaay, Server running at https://localhost:${port}!`);
 });
