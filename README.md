@@ -9,7 +9,7 @@ git clone https://github.com/SumitVermakgp/birthday-reminder.git
 cd birthday-reminder
 ```
 
-## endpoints
+## Endpoints
 ### Health Check
 
 ```shell script
