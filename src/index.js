@@ -13,7 +13,7 @@ app.use(express.json());
 app.get("/api/v1/birthdays", async (_, res) => {
     try{
         const users = await knex.select("*").table('users');
-        if (users){
+        if(users.length){
             res.status(200).send(users);
         } else {
             res.status(404).send("Bad Request")
@@ -24,12 +24,12 @@ app.get("/api/v1/birthdays", async (_, res) => {
 });
 
 // get user details by name
-app.get("/api/v1/birthday/:name", async (req, res) => {
-    const { name } = req.params;
+app.get("/api/v1/birthday/:id", async (req, res) => {
+    const { id } = req.params;
     try{
-        const user = await knex.select("*").table('users').where(`name`, name);
+        const user = await knex.select("*").table('users').where(`id`, id);
         if(user) {
-            res.status(200).send(users);
+            res.status(200).send(user);
         } else {
             res.status(404).send("Record not found")
         }
@@ -55,7 +55,6 @@ app.post("/api/v1/birthday", async (req, res) => {
 
 // update a user
 app.patch("/api/v1/birthday/:id", async (req, res) => {
-    console.log("here")
     const { id } = req.params;
     const modifier = req.body;
 
@@ -67,7 +66,23 @@ app.patch("/api/v1/birthday/:id", async (req, res) => {
             res.status(404).send("Record not found")
         } 
     } catch (error){
-        res.status(500).json({message: "Error updating new post", error: error})
+        res.status(500).json({message: "Error updating user", error: error})
+    }
+});
+
+// delete a user
+app.delete("/api/v1/birthday/:id", async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const update =  await knex('users').where({id}).del();
+        if (update){
+            res.status(200).send("Deleted Successfully!")
+        } else {
+            res.status(404).send("Record not found")
+        } 
+    } catch (error){
+        res.status(500).json({message: "Error deleting the user", error: error})
     }
 });
 
