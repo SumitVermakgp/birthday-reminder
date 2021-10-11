@@ -1,11 +1,21 @@
-const knex = require('knex')({
-    client: 'pg',
-    connection: {
-      host : '127.0.0.1',
-      user : process.env.DB_USER,
-      password : process.env.DB_PW,
-      database : process.env.DB_NAME
-    }
-  });
+const dotenv = require("dotenv").config();
+const knex = require("knex");
 
-  module.exports = knex;
+var options = {
+  development: {
+      client: 'pg',
+      connection: {
+        host : '127.0.0.1',
+        user : process.env.DB_USER,
+        password : process.env.DB_PW,
+        database : process.env.DB_NAME
+      }
+  },
+  migrations: {
+      tableName: 'knex_migrations'
+    },
+};
+
+var environment = process.env.NODE_ENV || 'development';
+var config = options[environment];
+module.exports = config;

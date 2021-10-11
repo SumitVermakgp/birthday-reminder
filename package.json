@@ -7,7 +7,9 @@
     "test": "cd test && mocha tests.js",
     "dev": "nodemon ./src/index.js",
     "lint": "eslint --fix --ext .js .",
-    "start": "node -r dotenv/config ./src/index.js"
+    "start": "node -r dotenv/config ./src/index.js",
+    "makeMigrations": "knex migrate:make --knexfile knex.js  create_users_table",
+    "migrate": "knex migrate:latest --knexfile knex.js "
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,7 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
-    "underscore": "^1.9.1"
-  },
-  "devDependencies": {
+    "underscore": "^1.9.1",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "knex": "^0.95.11",
