@@ -15,37 +15,31 @@ cd birthday-reminder
 ```shell script
 GET  {localhost}/api/v1/health
 ```
-To check if the server is running properly and client can make the requests.
 
 ### Get all users
 ```shell script
 GET  {localhost}/api/v1/users
 ```
-To get list of all users
 
 ### Get user by id
 ```shell script
 GET  {localhost}/api/v1/user/:id
 ```
-To get list of all users
 
 
-### add a user
+### Add an user
 ```shell script
 POST  {localhost}/api/v1/user
 ```
-To add a user
 
-### update a user
+### Update an user
 ```shell script
 PATCH  {localhost}/api/v1/user/:id
 ```
-To add a user
 
-### delete a user
+### Delete an user
 ```shell script
 DELETE  {localhost}/api/v1/user/:id
 ```
-To add a user
 
 
