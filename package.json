@@ -9,7 +9,9 @@
     "lint": "eslint --fix --ext .js .",
     "start": "node -r dotenv/config ./src/index.js",
     "makeMigrations": "knex migrate:make --knexfile knex.js  create_users_table",
-    "migrate": "knex migrate:latest --knexfile knex.js "
+    "migrate": "knex migrate:latest --knexfile knex.js ",
+    "seeder": "knex seed:make 01_users",
+    "seed": "knex seed:run"
   },
   "repository": {
     "type": "git",
