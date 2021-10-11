@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Birthday Reminder</title>
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
         <h1>Birthday Reminder App</h1>
-        <a href="https://github.com/SumitVermakgp/birthday-reminder"> Click here to check Git Repo</a>
+        <div id=gitLink>
+            <a href="https://github.com/SumitVermakgp/birthday-reminder"> Click here to check Git Repo</a>
+        </div>
+        <br><br>
+        <div id=endpoints> 
+            <h2> Endpoints </h2>
+            <ul> GET  {localhost}/api/v1/health</ul>
+            <ul> GET  {localhost}/api/v1/users</ul>
+            <ul> GET  {localhost}/api/v1/user/:id</ul>
+            <ul> POST {localhost}/api/v1/user</ul>
+            <ul> PATCH {localhost}/api/v1/user/:id</ul>
+            <ul> DELETE {localhost}/api/v1/user/:id</ul>
+
+             
+        </div>
     </body>
 </html>

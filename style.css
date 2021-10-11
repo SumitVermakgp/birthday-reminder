@@ -1,0 +1,21 @@
+body {
+    background-color: wheat;
+}
+
+h1 {
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+#gitLink {
+    font-weight: bold;
+    color: lightblue;
+    text-align: center;
+}
+
+
+#endpoints {
+    margin: auto;
+    text-align: center;
+}
