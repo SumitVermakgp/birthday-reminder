@@ -1,5 +1,5 @@
 const express = require("express");
-const knex = require("./knex")
+const knex = require("../knex")
 
 
 const app = express();
@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 app.get("/api/v1/birthdays", async (_, res) => {
-    res.status(200).send("All Birthdays will be listed here!")
+    res.status(200).send("All Birthdays will be listed here!!")
 });
 
 
