@@ -9,7 +9,7 @@ app.use(express.json());
 
 
 // get all birthdays
-app.get("/api/v1/birthdays", async (_, res) => {
+app.get("/api/v1/users", async (_, res) => {
     try{
         const users = await knex.select("*").table('users');
         if(users.length){
@@ -23,7 +23,7 @@ app.get("/api/v1/birthdays", async (_, res) => {
 });
 
 // get user details by name
-app.get("/api/v1/birthday/:id", async (req, res) => {
+app.get("/api/v1/user/:id", async (req, res) => {
     const { id } = req.params;
     try{
         const user = await knex.select("*").table('users').where(`id`, id);
@@ -38,7 +38,7 @@ app.get("/api/v1/birthday/:id", async (req, res) => {
 });
 
 // add a new user
-app.post("/api/v1/birthday", async (req, res) => {
+app.post("/api/v1/user", async (req, res) => {
     const { name, email, birthdate } = req.body;
     try{
         const users = await knex('users').insert({'name': name, 'email': email, 'birthdate': birthdate})
@@ -53,7 +53,7 @@ app.post("/api/v1/birthday", async (req, res) => {
 });
 
 // update a user
-app.patch("/api/v1/birthday/:id", async (req, res) => {
+app.patch("/api/v1/user/:id", async (req, res) => {
     const { id } = req.params;
     const modifier = req.body;
 
@@ -70,7 +70,7 @@ app.patch("/api/v1/birthday/:id", async (req, res) => {
 });
 
 // delete a user
-app.delete("/api/v1/birthday/:id", async (req, res) => {
+app.delete("/api/v1/user/:id", async (req, res) => {
     const { id } = req.params;
 
     try {
