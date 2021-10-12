@@ -25,7 +25,7 @@ describe('GET /api/v1/users', () => {
     })
 })
 
-describe('GET /api/v1/users/:id', () => {
+describe('GET /api/v1/user/:id', () => {
     it('should return user by id', function(done){
         chai.request(app)
         .get('/api/v1/user/15')
@@ -39,7 +39,7 @@ describe('GET /api/v1/users/:id', () => {
     })
 })
 
-describe('POST /api/v1/users/:id', () => {
+describe('POST /api/v1/user/:id', () => {
     it('should add an users', function(done){
         chai.request(app)
         .post('/api/v1/user')
@@ -50,6 +50,32 @@ describe('POST /api/v1/users/:id', () => {
         })
         .end(function(err, res) {
             res.should.have.status(201);
+            done();
+        });
+    })
+})
+
+describe('PATCH /api/v1/user/:id', () => {
+    it('should update an users', function(done){
+        chai.request(app)
+        .patch('/api/v1/user/16')
+        .send({
+            name: 'test134'
+        })
+        .end(function(err, res) {
+            res.should.have.status(200);
+            done();
+        });
+    })
+})
+
+
+describe('DELETE /api/v1/user/:id', () => {
+    it('should update an users', function(done){
+        chai.request(app)
+        .delete('/api/v1/user/12')
+        .end(function(err, res) {
+            res.should.have.status(200);
             done();
         });
     })

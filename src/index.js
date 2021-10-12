@@ -8,7 +8,7 @@ const port = 9999 || process.env.PORT;
 app.use(express.json());
 
 
-// get all birthdays
+// get all users
 app.get("/api/v1/users", async (_, res) => {
     try{
         const users = await knex.select("*").table('users');
@@ -22,7 +22,7 @@ app.get("/api/v1/users", async (_, res) => {
     }
 });
 
-// get user details by name
+// get user details by id
 app.get("/api/v1/user/:id", async (req, res) => {
     const { id } = req.params;
     try{
