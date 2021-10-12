@@ -30,7 +30,7 @@ app.get("/api/v1/user/:id", async (req, res) => {
         if(user) {
             res.status(200).send(user);
         } else {
-            res.status(404).send("Record not found")
+            res.status(404).send("No Birthdays in this month")
         }
     } catch (error){
         res.status(500).json({message: "Error geeting the user details", error: error})
