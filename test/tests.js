@@ -26,12 +26,12 @@ describe('GET /api/v1/users', () => {
 describe('GET /api/v1/user/:id', () => {
     it('should return user by id', function(done){
         chai.request(app)
-        .get('/api/v1/user/15')
+        .get('/api/v1/user/5')
         .end(function(err, res) {
             res.should.have.status(200);
             res.should.be.json; 
             res.body[0].should.have.property('name');
-            res.body[0].name.should.equal('Amit');
+            res.body[0].name.should.equal('user5');
             done();
         });
     })
@@ -56,7 +56,7 @@ describe('POST /api/v1/user/:id', () => {
 describe('PATCH /api/v1/user/:id', () => {
     it('should update an users', function(done){
         chai.request(app)
-        .patch('/api/v1/user/16')
+        .patch('/api/v1/user/11')
         .send({
             name: 'test134'
         })
@@ -71,7 +71,7 @@ describe('PATCH /api/v1/user/:id', () => {
 describe('DELETE /api/v1/user/:id', () => {
     it('should update an users', function(done){
         chai.request(app)
-        .delete('/api/v1/user/14')
+        .delete('/api/v1/user/11')
         .end(function(err, res) {
             res.should.have.status(200);
             done();

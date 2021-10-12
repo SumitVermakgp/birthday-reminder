@@ -12,7 +12,9 @@ exports.seed = function(knex) {
         {name: 'user5', email: 'user5@gmail.com', birthdate: '1999-04-11'},
         {name: 'user6', email: 'user6@gmail.com', birthdate: '1994-08-28'},
         {name: 'user7', email: 'user7@gmail.com', birthdate: '1994-11-01'},
-        {name: 'user8', email: 'user8@gmail.com', birthdate: '1994-12-14'}
+        {name: 'user8', email: 'user8@gmail.com', birthdate: '1994-12-14'},
+        {name: 'user9', email: 'user9@gmail.com', birthdate: '1992-07-01'},
+        {name: 'user10', email: 'user108@gmail.com', birthdate: '1996-08-14'}
       ]);
     });
 };
