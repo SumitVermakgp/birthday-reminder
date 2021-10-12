@@ -37,6 +37,22 @@ app.get("/api/v1/user/:id", async (req, res) => {
     }
 });
 
+// get birthdays by id
+app.get("/api/v1/birthdays/:month", async (req, res) => {
+    const { month } = req.params;
+    try{
+        const user = await knex.select("*").table('users').where(knex.raw(`EXTRACT(MONTH FROM birthdate::date) = ?`, [month]));
+        if(user) {
+            res.status(200).send(user);
+        } else {
+            res.status(404).send("Records not found")
+        }
+    } catch (error){
+        res.status(500).json({message: "Error geeting the birthdays", error: error})
+    }
+});
+
+
 // add a new user
 app.post("/api/v1/user", async (req, res) => {
     const { name, email, birthdate } = req.body;

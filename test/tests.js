@@ -3,8 +3,6 @@ const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 const { app } = require("../src/index");
 
-
-const should = chai.should();
 chai.use(chaiHttp);
 
 
@@ -73,7 +71,7 @@ describe('PATCH /api/v1/user/:id', () => {
 describe('DELETE /api/v1/user/:id', () => {
     it('should update an users', function(done){
         chai.request(app)
-        .delete('/api/v1/user/12')
+        .delete('/api/v1/user/14')
         .end(function(err, res) {
             res.should.have.status(200);
             done();
